@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://deum7uoii4dt5"]
+[gd_scene load_steps=12 format=3 uid="uid://deum7uoii4dt5"]
 
 [ext_resource type="Texture2D" uid="uid://cf1nmamxp83tt" path="res://resources/sprites/world_tileset.png" id="1_xygsb"]
 [ext_resource type="PackedScene" uid="uid://bumaujc3plt5v" path="res://scenes/jugador.tscn" id="3_3m42p"]
 [ext_resource type="PackedScene" uid="uid://l5vhy03fceor" path="res://scenes/plataforma.tscn" id="3_rm2st"]
 [ext_resource type="PackedScene" uid="uid://digbqnh1wfi0p" path="res://scenes/moneda.tscn" id="4_ykoqp"]
+[ext_resource type="PackedScene" uid="uid://bdfwmowetb7ds" path="res://scenes/zona_de_muerte.tscn" id="5_3avx3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6hcw"]
 texture = ExtResource("1_xygsb")
@@ -445,6 +446,8 @@ _data = {
 "RESET": SubResource("Animation_k6ksl")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hb1bi"]
+
 [node name="scene01" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -458,6 +461,7 @@ position = Vector2(26, 48)
 [node name="Camera2D" type="Camera2D" parent="jugador"]
 position = Vector2(1, -9)
 zoom = Vector2(4, 4)
+limit_bottom = 128
 position_smoothing_enabled = true
 
 [node name="plataforma" parent="." instance=ExtResource("3_rm2st")]
@@ -486,3 +490,9 @@ position = Vector2(568, 40)
 
 [node name="moneda5" parent="." instance=ExtResource("4_ykoqp")]
 position = Vector2(104, -40)
+
+[node name="ZonaDeMuerte" parent="." instance=ExtResource("5_3avx3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDeMuerte"]
+position = Vector2(0, 130)
+shape = SubResource("WorldBoundaryShape2D_hb1bi")
