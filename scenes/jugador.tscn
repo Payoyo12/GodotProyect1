@@ -210,6 +210,9 @@ z_index = 5
 collision_layer = 2
 script = ExtResource("1_iaisd")
 
+[node name="spawnProyectil" type="Marker2D" parent="."]
+position = Vector2(0, -6)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tr3ah")

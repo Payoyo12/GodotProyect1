@@ -7,7 +7,7 @@ extends Area2D
 
 func _on_body_entered(body):
 		print("Perdiste")
-		game_manager.decrementa_una_vida()
+		game_manager.decrementa_una_vida() ##esto falla
 		sonido_muerte.play()
 		Engine.time_scale = 0.3
 		body.get_node("CollisionShape2D").queue_free()

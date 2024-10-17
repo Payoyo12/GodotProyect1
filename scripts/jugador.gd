@@ -3,9 +3,12 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+const PROYECTIL = preload("res://scenes/proyectil.tscn")
 
+@onready var spawn_proyectil = $spawnProyectil
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var sonido_salto = $sonidoSalto
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -44,5 +47,14 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+
+
+	if Input.is_action_just_pressed("disparo"):
+		var newProyectil = PROYECTIL.instantiate()
+		newProyectil.global_position = $spawnProyectil.global_position
+		get_parent().add_child(newProyectil)
+
+
 
 	move_and_slide()
