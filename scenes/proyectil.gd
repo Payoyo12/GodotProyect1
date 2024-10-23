@@ -1,14 +1,13 @@
 extends RigidBody2D
 
-var SPEED = 10000
+var SPEED = 100
 @onready var jugador = $"."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var direccion = (jugador.position - global_position).normalized()
-	
-	apply_central_impulse(direccion * SPEED)
-	apply_central_force(direccion * SPEED)
+	direccion = Vector2(1,-1)
+	apply_central_impulse(direccion * SPEED) #la direccion tiene que ser vector 2
 	
 	# apply_impulse(Vector2.ZERO, direccion * SPEED)
 	
