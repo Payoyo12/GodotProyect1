@@ -1,8 +1,11 @@
 extends Node2D
 
-const VELOCIDAD = 60
-
+#variables
 var DIRECCION = 1
+
+# variables para diseñador
+@export var VELOCIDAD = 60
+
 
 @onready var ray_cast_derecha = $RayCastDerecha
 @onready var ray_cast_izquierda = $RayCastIzquierda

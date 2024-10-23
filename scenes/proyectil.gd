@@ -1,17 +1,16 @@
 extends RigidBody2D
 
-var SPEED = 100
-@onready var jugador = $"."
+# variables para diseñador
+@export var force = 100
+var direction = 0
 
-# Called when the node enters the scene tree for the first time.
+# Se llama cuando el nodo ingresa al árbol de escena por primera vez.
 func _ready():
-	var direccion = (jugador.position - global_position).normalized()
-	direccion = Vector2(1,-1)
-	apply_central_impulse(direccion * SPEED) #la direccion tiene que ser vector 2
 	
-	# apply_impulse(Vector2.ZERO, direccion * SPEED)
+	#da un nimpulso en la direccion a la que se mira con una fuerza
+	apply_central_impulse(Vector2(direction,-1) * force) 
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# se ejecuta al colisionar con otro objeto
+func _on_body_entered(body):
+	queue_free()  # Destruye el proyectil

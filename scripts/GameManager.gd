@@ -1,5 +1,6 @@
 extends Node
 
+#variables
 var puntuacion= 0
 var vida= 3
 
