@@ -1,18 +1,15 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-var impulso = 50
+# Velocidad inicial del proyectil
+const SPEED = 5.0
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-# Called when the node enters the scene tree for the first time.
+# Método que se llama al instanciar el proyectil
 func _ready():
-	
-	pass # Replace with function body.
+	# Aplica un impulso en diagonal
+	apply_impulse(Vector2.ZERO, Vector2(SPEED, -SPEED))  # Ajusta los valores para la dirección deseada
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Opcional: puedes agregar lógica para destruir el proyectil después de un tiempo o al colisionar
 func _process(delta):
-	pass
-	
-func _physics_process(delta):
-	velocity.y += gravity * delta
-	velocity.y = impulso
+	# Puedes añadir lógica aquí si es necesario, como detectar colisiones
+	if position.y < -100:  # Ejemplo de destrucción fuera de pantalla
+		queue_free()
