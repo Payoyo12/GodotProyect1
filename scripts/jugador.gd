@@ -1,6 +1,7 @@
 extends CharacterBody2D
 # variables
-var puntuacion = 0
+var numMonedas = 0
+var numCalabazas = 0
 
 # variables para diseñador
 @export var SPEED = 130
@@ -13,6 +14,9 @@ var puntuacion = 0
 
 # variables para scenas
 const PROYECTIL = preload("res://scenes/proyectil.tscn")
+
+# Variables para nodos de otras scenas
+@onready var resultado = $"../Textos/resultado"
 
 # Obtiene la gravedad del proyecto para sincronizarla con los nodos RigidBody
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -71,11 +75,17 @@ func decrementa_una_vida():
 	vida -= 1
 	print("vida: " + str(vida))
 
-# incrementa el valos de la variable puntuacion
-func incrementa_puntuacion():
-	puntuacion += 1
-	print("puntuacion: " + str(puntuacion))
-
+# incrementa el valos de la variable numMonedas
+func incrementa_numMonedas():
+	numMonedas += 1
+	resultado.text = "monedas " + str(numMonedas) + "/10\ncalabazas " + str(numCalabazas) + "/1"
+	print("numMonedas: " + str(numMonedas) + "\nnumCalabazas: " + str(numCalabazas))
+	
+# incrementa el valos de la variable numCalabazas
+func incrementa_numCalabazas():
+	numCalabazas += 1
+	resultado.text = "monedas " + str(numMonedas) + "/10\ncalabazas " + str(numCalabazas) + "/1"
+	print("numMonedas: " + str(numMonedas))
 # funcionencargada de lanzar el proyectil
 func lanzamiento_proyectil():
 	var newProyectil = PROYECTIL.instantiate()  # Crea una nueva instancia del proyectil

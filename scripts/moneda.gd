@@ -8,7 +8,7 @@ extends Area2D
 # se ejecuta al colisionar con otro objeto
 func _on_body_entered(body):
 	if	body.name == "jugador":
-		body.incrementa_puntuacion() # actualiza la puntuacion
+		body.incrementa_numMonedas() # actualiza la puntuacion
 		sonido_moneda.play() # Reproduce el sonido de obtencion de moneda
 		animated_sprite_2d.visible= false # se deja de visualizar la moneda
 		collision_shape_2d.call_deferred("set", "disabled", true) # desactiva la colision de manera segura al finalizar el fotograma actual.
