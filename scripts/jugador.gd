@@ -1,14 +1,17 @@
 extends CharacterBody2D
+# variables
+var puntuacion = 0
 
 # variables para diseñador
 @export var SPEED = 130
 @export var JUMP_VELOCITY = 300
+@export var vida = 3
 
-# Variables para nodos que se usarán en el script
+# Variables para nodos
 @onready var animated_sprite_2d = $AnimatedSprite2D  # Nodo para el sprite animado del personaje
 @onready var sonido_salto = $sonidoSalto  # Nodo para el sonido del salto
 
-# Cargas de escenas para instanciarla más tarde
+# variables para scenas
 const PROYECTIL = preload("res://scenes/proyectil.tscn")
 
 # Obtiene la gravedad del proyecto para sincronizarla con los nodos RigidBody
@@ -50,19 +53,39 @@ func _physics_process(delta):
 		# Desacelera el personaje cuando no hay entrada
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	# Instancia un proyectil si se presiona la tecla de disparo
+	# si se presiona la tecla de disparo se lanza un proyectil
 	if Input.is_action_just_pressed("disparo"):
-		var newProyectil = PROYECTIL.instantiate()  # Crea una nueva instancia del proyectil
 		
-		# segun donde mira el personaje se lanzara el proyectil desde la posicion correcta
-		if	!animated_sprite_2d.flip_h:
-			newProyectil.global_position = global_position + Vector2(10, -20)  # Posiciona el proyectil en la posicion del jugador + correccion de distancia
-			newProyectil.direction = 1
-		elif animated_sprite_2d.flip_h:
-			newProyectil.global_position = global_position + Vector2(-10, -20)  # Posiciona el proyectil en la posicion del jugador + correccion de distancia
-			newProyectil.direction = -1
-			
-		get_parent().add_child(newProyectil)  # Añade el proyectil como hijo del nodo padre
-
+		lanzamiento_proyectil() # se encarga del lanzamiento
+		
 	# Mueve al personaje usando la física
 	move_and_slide()
+
+# incrementa el valos de la variable vida
+func incrementa_una_vida():
+	vida += 1
+	print("vida: " + str(vida))
+
+# decrementa el valos de la variable vida
+func decrementa_una_vida():
+	vida -= 1
+	print("vida: " + str(vida))
+
+# incrementa el valos de la variable puntuacion
+func incrementa_puntuacion():
+	puntuacion += 1
+	print("puntuacion: " + str(puntuacion))
+
+# funcionencargada de lanzar el proyectil
+func lanzamiento_proyectil():
+	var newProyectil = PROYECTIL.instantiate()  # Crea una nueva instancia del proyectil
+	
+	# segun donde mira el personaje se lanzara el proyectil desde la posicion correcta
+	if	!animated_sprite_2d.flip_h:
+		newProyectil.global_position = global_position + Vector2(10, -20)  # Posiciona el proyectil en la posicion del jugador + correccion de distancia
+		newProyectil.direction = 1
+	elif animated_sprite_2d.flip_h:
+		newProyectil.global_position = global_position + Vector2(-10, -20)  # Posiciona el proyectil en la posicion del jugador + correccion de distancia
+		newProyectil.direction = -1
+		
+	get_parent().add_child(newProyectil)  # Añade el proyectil como hijo del nodo padre

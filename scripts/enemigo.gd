@@ -17,8 +17,6 @@ var DIRECCION = 1
 func _ready():
 	pass # Reemplazar con el cuerpo de la función.
 
-
-
 # Se llama cada cuadro. 'delta' es el tiempo transcurrido desde el cuadro anterior.
 func _process(delta):
 	
