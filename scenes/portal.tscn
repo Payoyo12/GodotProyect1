@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://brvhyunllpmur"]
+[gd_scene load_steps=12 format=3 uid="uid://brvhyunllpmur"]
 
 [ext_resource type="Texture2D" uid="uid://wm6f6kfupx0e" path="res://resources/sprites/Dimensional_Portal.png" id="1_oa605"]
 [ext_resource type="Script" path="res://scripts/portal.gd" id="2_d0n7e"]
+[ext_resource type="AudioStream" uid="uid://b8mooxo7cduc7" path="res://resources/sounds/netherPortal (mp3cut.net) (1).mp3" id="3_dubg2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jx14p"]
 radius = 6.0
@@ -69,5 +70,11 @@ shape = SubResource("CapsuleShape2D_jx14p")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lswhi")
 autoplay = "default"
+
+[node name="portal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dubg2")
+autoplay = true
+max_distance = 200.0
+bus = &"efectos de sonido"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -9,4 +9,4 @@ func _on_body_entered(body):
 	# Verifica si el body que ha entrado es el jugador
 	if body.name == "jugador":  # Cambia "jugador" por el nombre del nodo de tu jugador si es distinto
 		print("fifififififi")
-		get_tree().change_scene_to_file("res://scenes/scene_02.tscn")  # Cambia a la nueva escena
+		get_tree().change_scene_to_file("res://scenes/Tutorial2.tscn")  # Cambia a la nueva escena
