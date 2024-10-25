@@ -59,9 +59,8 @@ func _physics_process(delta):
 
 	# si se presiona la tecla de disparo se lanza un proyectil
 	if Input.is_action_just_pressed("disparo"):
-		
 		lanzamiento_proyectil() # se encarga del lanzamiento
-		
+	
 	# Mueve al personaje usando la física
 	move_and_slide()
 
@@ -80,13 +79,14 @@ func incrementa_numMonedas():
 	numMonedas += 1
 	resultado.text = "monedas " + str(numMonedas) + "/10\ncalabazas " + str(numCalabazas) + "/1"
 	print("numMonedas: " + str(numMonedas) + "\nnumCalabazas: " + str(numCalabazas))
-	
+
 # incrementa el valos de la variable numCalabazas
 func incrementa_numCalabazas():
 	numCalabazas += 1
 	resultado.text = "monedas " + str(numMonedas) + "/10\ncalabazas " + str(numCalabazas) + "/1"
 	print("numMonedas: " + str(numMonedas))
-# funcionencargada de lanzar el proyectil
+
+# funcion encargada de lanzar el proyectil
 func lanzamiento_proyectil():
 	var newProyectil = PROYECTIL.instantiate()  # Crea una nueva instancia del proyectil
 	

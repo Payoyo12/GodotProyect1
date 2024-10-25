@@ -4,7 +4,6 @@ extends Area2D
 # Variables para nodos que se usarán en el script
 @onready var timer = $Timer
 @onready var sonido_muerte = $sonidoMuerte
-@onready var vidas = $"../jugador/Camera2D/vidas"
 
 # se ejecuta al colisionar con otro objeto
 func _on_body_entered(body):
@@ -14,7 +13,6 @@ func _on_body_entered(body):
 		# si tine mas de 1 de vida entra
 		if	body.vida >1: # resta 1 de vida y actualiza la informacion
 			body.decrementa_una_vida() 
-			##vidas.text = "Vidas: " + str(body.vida) 
 		else: # si no tiene mas dde 1 de vida muere
 			muerte_jugador(body)
 	

@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://fb7a3g4q7wd6"]
+[gd_scene load_steps=11 format=3 uid="uid://fb7a3g4q7wd6"]
 
 [ext_resource type="Script" path="res://scripts/enemigo.gd" id="1_0imgs"]
 [ext_resource type="Texture2D" uid="uid://dnajhm5u3o05p" path="res://resources/sprites/slime_green.png" id="1_8ypng"]
 [ext_resource type="PackedScene" uid="uid://bdfwmowetb7ds" path="res://scenes/zona_de_muerte.tscn" id="2_hftlp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u12x5"]
+size = Vector2(8, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v72b"]
 atlas = ExtResource("1_8ypng")
@@ -43,8 +46,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbdlx"]
 size = Vector2(8, 12)
 
-[node name="enemigo" type="Node2D"]
+[node name="enemigo" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_0imgs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_u12x5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)

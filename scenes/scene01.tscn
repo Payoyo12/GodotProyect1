@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="8_boxib"]
 [ext_resource type="FontFile" uid="uid://b41eikwhvbel0" path="res://resources/fonts/PixelOperator8-Bold.ttf" id="8_dkvip"]
 [ext_resource type="PackedScene" uid="uid://moh4swnumckv" path="res://scenes/pocion.tscn" id="12_hhclx"]
-[ext_resource type="PackedScene" uid="uid://bgdytakbqm7nv" path="res://scenes/portal.tscn" id="14_dpql3"]
+[ext_resource type="PackedScene" uid="uid://brvhyunllpmur" path="res://scenes/portal.tscn" id="15_s327i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6hcw"]
 texture = ExtResource("1_xygsb")
@@ -744,25 +744,13 @@ layer_2/name = "zonas ocultas"
 layer_2/tile_data = PackedInt32Array(-327582, 196608, 1, -262046, 196608, 1, -196510, 196608, 1, -196509, 196608, 1, -196508, 196608, 1, -196507, 196608, 1, -196506, 196608, 1, -196505, 196608, 1, -196504, 196608, 1, -196503, 196608, 1, -196502, 196608, 1, -196501, 196608, 1, -196500, 196608, 1, -196499, 196608, 1, -130963, 196608, 1, -130962, 196608, 1, -196498, 196608, 1, -262035, 196608, 1, -262034, 196608, 1, -262036, 196608, 1, -262037, 196608, 1, -262038, 196608, 1, -262039, 196608, 1, -262040, 196608, 1, -262041, 196608, 1, -262042, 196608, 1, -262043, 196608, 1, -262044, 196608, 1, -262045, 196608, 1, -327581, 196608, 1, -327580, 196608, 1, -130971, 196608, 1, -130970, 196608, 1, -130969, 196608, 1, -130968, 196608, 1, -130967, 196608, 1, -130966, 196608, 1, -130965, 196608, 1, -130964, 196608, 1)
 
 [node name="jugador" parent="." instance=ExtResource("3_3m42p")]
-position = Vector2(1033, 62)
+position = Vector2(2150, -467)
 
 [node name="Camera2D" type="Camera2D" parent="jugador"]
 position = Vector2(1, -9)
 zoom = Vector2(4, 4)
 limit_bottom = 128
 position_smoothing_enabled = true
-
-[node name="vidas" type="Label" parent="jugador/Camera2D"]
-visible = false
-offset_left = -127.0
-offset_top = -64.0
-offset_right = -15.0
-offset_bottom = -48.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("8_dkvip")
-text = "Vidas: 3"
-uppercase = true
 
 [node name="ZonaDeMuerte" parent="." instance=ExtResource("5_3avx3")]
 
@@ -1054,5 +1042,5 @@ position = Vector2(1096, -184)
 
 [node name="objetosInteractuables" type="Node2D" parent="."]
 
-[node name="portal" parent="objetosInteractuables" instance=ExtResource("14_dpql3")]
+[node name="portal" parent="objetosInteractuables" instance=ExtResource("15_s327i")]
 position = Vector2(2231, -464)
