@@ -15,8 +15,6 @@ var numCalabazas = 0
 @onready var collision_shape_2d = $CollisionShape2D # Nodo para el colisionador del jugador
 @onready var timer = $Timer
 
-
-
 # variables para scenas
 const PROYECTIL = preload("res://scenes/proyectil.tscn")
 

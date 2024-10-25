@@ -1,5 +1,6 @@
 extends Area2D
 
+# variables  para el diseñador
 @export var distancia_recorrido_animacion = 60
 @export var duracion_recorrido_animacion = 1
 
@@ -15,7 +16,7 @@ func _on_body_entered(body):
 		body.incrementa_numMonedas() # actualiza la puntuacion
 		sonido_moneda.play() # Reproduce el sonido de obtencion de moneda
 		collision_shape_2d.call_deferred("set", "disabled", true) # desactiva la colision de manera segura al finalizar el fotograma actual.
-		control_animated_finish() # finaliza con una animacion
+		destruction_animated() # Funcion para destruirse con una animacion
 	
 	else:
 		pass
@@ -24,8 +25,8 @@ func _on_body_entered(body):
 func _on_sonido_moneda_finished():
 	queue_free() # Destruye la moneda
 
-# Función que controla la animación de finalización
-func control_animated_finish():
+# Función que controla la animacion al destruirse
+func destruction_animated():
 
 	# Crea un nuevo tween (animación) dentro del árbol de nodos, lo asocia al nodo "moneda" y configura para que las animaciones puedan correr en paralelo
 	var tween = get_tree().create_tween().bind_node(moneda).set_parallel(true)

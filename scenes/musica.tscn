@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://cu6b3iyjvhx8i" path="res://resources/music/time_for_adventure.mp3" id="1_h3npu"]
 
-[node name="musica" type="AudioStreamPlayer2D"]
+[node name="musica" type="AudioStreamPlayer"]
 stream = ExtResource("1_h3npu")
 autoplay = true
 bus = &"musica"

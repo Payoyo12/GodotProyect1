@@ -1,5 +1,6 @@
 extends Area2D
 
+
 # se ejecuta al colisionar con otro objeto
 func _on_body_entered(body):
 	
@@ -7,5 +8,7 @@ func _on_body_entered(body):
 	if body.name == "jugador":
 		body.death()
 	
+
+
 
 

@@ -100,7 +100,7 @@ animations = [{
 radius = 6.0
 
 [node name="moneda" type="Area2D"]
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_hsw8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

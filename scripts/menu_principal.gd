@@ -2,8 +2,8 @@ extends CanvasLayer
 
 
 # variables para rutas de escenas
-var escena1 = "res://scenes/scene01.tscn"
-var escena2 = "res://scenes/scene_02.tscn"
+var escena1 = "res://scenes/Tutorial1.tscn"
+var escena2 = "res://scenes/Tutorial2.tscn"
 
 # funcion para el boton escena1
 func _on_escena_1_pressed():
