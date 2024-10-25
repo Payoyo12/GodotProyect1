@@ -1,19 +1,18 @@
 extends CanvasLayer
 
 
-# Ruta de la escena del juego
+# variables para rutas de escenas
 var escena1 = "res://scenes/scene01.tscn"
 var escena2 = "res://scenes/scene_02.tscn"
 
-
-
+# funcion para el boton escena1
 func _on_escena_1_pressed():
 	get_tree().change_scene_to_file(escena1)
 
-
+# funcion para el boton escena2
 func _on_escena_2_pressed():
 	get_tree().change_scene_to_file(escena2)
 
-
+# funcion para el boton exit
 func _on_exit_pressed():
 	get_tree().quit()

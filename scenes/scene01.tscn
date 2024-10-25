@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://wm6f6kfupx0e" path="res://resources/sprites/Dimensional_Portal.png" id="5_5gtge"]
 [ext_resource type="PackedScene" uid="uid://fb7a3g4q7wd6" path="res://scenes/enemigo.tscn" id="6_pqrey"]
 [ext_resource type="FontFile" uid="uid://ye3pv8tt67cm" path="res://resources/fonts/PixelOperator8.ttf" id="7_rg6yq"]
-[ext_resource type="Script" path="res://scripts/zona_de_muerte.gd" id="7_rsa1m"]
+[ext_resource type="Script" path="res://scripts/limiteMapa.gd" id="7_rsa1m"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="8_boxib"]
 [ext_resource type="FontFile" uid="uid://b41eikwhvbel0" path="res://resources/fonts/PixelOperator8-Bold.ttf" id="8_dkvip"]
 [ext_resource type="PackedScene" uid="uid://moh4swnumckv" path="res://scenes/pocion.tscn" id="12_hhclx"]
@@ -734,7 +734,7 @@ unique_name_in_owner = true
 script = ExtResource("8_boxib")
 
 [node name="jugador" parent="." instance=ExtResource("3_3m42p")]
-position = Vector2(2144, -475)
+position = Vector2(1512, 41)
 
 [node name="Camera2D" type="Camera2D" parent="jugador"]
 position = Vector2(1, -9)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfa4op3ekuu1p"]
 
-[ext_resource type="Script" path="res://scripts/zona_de_muerte.gd" id="1_vbwy6"]
+[ext_resource type="Script" path="res://scripts/limiteMapa.gd" id="1_vbwy6"]
 [ext_resource type="AudioStream" uid="uid://csh8dmxfco8sj" path="res://resources/sounds/hurt.wav" id="2_7k2d7"]
 
 [node name="ZonaDeMuerte" type="Area2D"]
