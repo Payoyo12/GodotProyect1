@@ -11,6 +11,11 @@ var numCalabazas = 0
 # Variables para nodos
 @onready var animated_sprite_2d = $AnimatedSprite2D  # Nodo para el sprite animado del personaje
 @onready var sonido_salto = $sonidoSalto  # Nodo para el sonido del salto
+@onready var sonido_muerte = $sonido_muerte # Nodo para el sonido del muerte
+@onready var collision_shape_2d = $CollisionShape2D # Nodo para el colisionador del jugador
+@onready var timer = $Timer
+
+
 
 # variables para scenas
 const PROYECTIL = preload("res://scenes/proyectil.tscn")
@@ -99,3 +104,16 @@ func lanzamiento_proyectil():
 		newProyectil.direction = -1
 		
 	get_parent().add_child(newProyectil)  # Añade el proyectil como hijo del nodo padre
+
+# funcion que gestiona la muerte del jugador
+func death():
+	print("Perdiste") # muestra en consola
+	sonido_muerte.play() # Reproduce el sonido de obtencion de pocion
+	Engine.time_scale = 0.3 #el juego correrá a un 30% de su velocidad normal
+	collision_shape_2d.queue_free() # destruye la colision del body
+	timer.start() #inicia el temporizador
+
+# se activa cuando un temporizador (Timer) llega a su tiempo de espera
+func _on_timer_timeout():
+	Engine.time_scale = 1 # reestableze la velocidad del juego a su escala normal
+	get_tree().reload_current_scene() # Recarga la escena actual

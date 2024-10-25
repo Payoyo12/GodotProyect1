@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://l5vhy03fceor" path="res://scenes/plataforma.tscn" id="3_rm2st"]
 [ext_resource type="Texture2D" uid="uid://cehmexgqwakv8" path="res://resources/sprites/platforms.png" id="4_0ve5c"]
 [ext_resource type="PackedScene" uid="uid://digbqnh1wfi0p" path="res://scenes/moneda.tscn" id="4_ykoqp"]
-[ext_resource type="PackedScene" uid="uid://bdfwmowetb7ds" path="res://scenes/zona_de_muerte.tscn" id="5_3avx3"]
 [ext_resource type="Texture2D" uid="uid://wm6f6kfupx0e" path="res://resources/sprites/Dimensional_Portal.png" id="5_5gtge"]
 [ext_resource type="PackedScene" uid="uid://fb7a3g4q7wd6" path="res://scenes/enemigo.tscn" id="6_pqrey"]
 [ext_resource type="FontFile" uid="uid://ye3pv8tt67cm" path="res://resources/fonts/PixelOperator8.ttf" id="7_rg6yq"]
+[ext_resource type="Script" path="res://scripts/zona_de_muerte.gd" id="7_rsa1m"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="8_boxib"]
 [ext_resource type="FontFile" uid="uid://b41eikwhvbel0" path="res://resources/fonts/PixelOperator8-Bold.ttf" id="8_dkvip"]
 [ext_resource type="PackedScene" uid="uid://moh4swnumckv" path="res://scenes/pocion.tscn" id="12_hhclx"]
@@ -572,7 +572,7 @@ sources/1 = SubResource("TileSetAtlasSource_jltkv")
 sources/2 = SubResource("TileSetAtlasSource_c1mmi")
 sources/3 = SubResource("TileSetAtlasSource_8on2e")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hb1bi"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0tnsb"]
 
 [sub_resource type="Animation" id="Animation_r08qy"]
 resource_name = "Movimiento"
@@ -733,6 +733,15 @@ _data = {
 unique_name_in_owner = true
 script = ExtResource("8_boxib")
 
+[node name="jugador" parent="." instance=ExtResource("3_3m42p")]
+position = Vector2(2144, -475)
+
+[node name="Camera2D" type="Camera2D" parent="jugador"]
+position = Vector2(1, -9)
+zoom = Vector2(4, 4)
+limit_bottom = 128
+position_smoothing_enabled = true
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_c64yb")
 format = 2
@@ -743,20 +752,14 @@ layer_1/tile_data = PackedInt32Array(131130, 0, 1, 131131, 0, 1, 131132, 0, 1, 1
 layer_2/name = "zonas ocultas"
 layer_2/tile_data = PackedInt32Array(-327582, 196608, 1, -262046, 196608, 1, -196510, 196608, 1, -196509, 196608, 1, -196508, 196608, 1, -196507, 196608, 1, -196506, 196608, 1, -196505, 196608, 1, -196504, 196608, 1, -196503, 196608, 1, -196502, 196608, 1, -196501, 196608, 1, -196500, 196608, 1, -196499, 196608, 1, -130963, 196608, 1, -130962, 196608, 1, -196498, 196608, 1, -262035, 196608, 1, -262034, 196608, 1, -262036, 196608, 1, -262037, 196608, 1, -262038, 196608, 1, -262039, 196608, 1, -262040, 196608, 1, -262041, 196608, 1, -262042, 196608, 1, -262043, 196608, 1, -262044, 196608, 1, -262045, 196608, 1, -327581, 196608, 1, -327580, 196608, 1, -130971, 196608, 1, -130970, 196608, 1, -130969, 196608, 1, -130968, 196608, 1, -130967, 196608, 1, -130966, 196608, 1, -130965, 196608, 1, -130964, 196608, 1)
 
-[node name="jugador" parent="." instance=ExtResource("3_3m42p")]
-position = Vector2(2150, -467)
+[node name="limiteMapa" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("7_rsa1m")
 
-[node name="Camera2D" type="Camera2D" parent="jugador"]
-position = Vector2(1, -9)
-zoom = Vector2(4, 4)
-limit_bottom = 128
-position_smoothing_enabled = true
-
-[node name="ZonaDeMuerte" parent="." instance=ExtResource("5_3avx3")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDeMuerte"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limiteMapa"]
 position = Vector2(0, 130)
-shape = SubResource("WorldBoundaryShape2D_hb1bi")
+shape = SubResource("WorldBoundaryShape2D_0tnsb")
 
 [node name="Monedas" type="Node2D" parent="."]
 
@@ -1044,3 +1047,5 @@ position = Vector2(1096, -184)
 
 [node name="portal" parent="objetosInteractuables" instance=ExtResource("15_s327i")]
 position = Vector2(2231, -464)
+
+[connection signal="body_entered" from="limiteMapa" to="limiteMapa" method="_on_body_entered"]
