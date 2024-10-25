@@ -1,22 +1,22 @@
 [gd_scene load_steps=33 format=3 uid="uid://deum7uoii4dt5"]
 
-[ext_resource type="Texture2D" uid="uid://cf1nmamxp83tt" path="res://resources/sprites/world_tileset.png" id="1_xygsb"]
-[ext_resource type="PackedScene" uid="uid://bumaujc3plt5v" path="res://scenes/jugador.tscn" id="3_3m42p"]
-[ext_resource type="Texture2D" uid="uid://dofkh78205w0j" path="res://resources/sprites/fruit.png" id="3_5nhif"]
-[ext_resource type="PackedScene" uid="uid://l5vhy03fceor" path="res://scenes/plataforma.tscn" id="3_rm2st"]
-[ext_resource type="Texture2D" uid="uid://cehmexgqwakv8" path="res://resources/sprites/platforms.png" id="4_0ve5c"]
-[ext_resource type="PackedScene" uid="uid://digbqnh1wfi0p" path="res://scenes/moneda.tscn" id="4_ykoqp"]
-[ext_resource type="Texture2D" uid="uid://wm6f6kfupx0e" path="res://resources/sprites/Dimensional_Portal.png" id="5_5gtge"]
-[ext_resource type="PackedScene" uid="uid://fb7a3g4q7wd6" path="res://scenes/enemigo.tscn" id="6_pqrey"]
-[ext_resource type="FontFile" uid="uid://ye3pv8tt67cm" path="res://resources/fonts/PixelOperator8.ttf" id="7_rg6yq"]
-[ext_resource type="Script" path="res://scripts/limiteMapa.gd" id="7_rsa1m"]
-[ext_resource type="Script" path="res://scripts/GameManager.gd" id="8_boxib"]
-[ext_resource type="FontFile" uid="uid://b41eikwhvbel0" path="res://resources/fonts/PixelOperator8-Bold.ttf" id="8_dkvip"]
-[ext_resource type="PackedScene" uid="uid://moh4swnumckv" path="res://scenes/pocion.tscn" id="12_hhclx"]
-[ext_resource type="PackedScene" uid="uid://brvhyunllpmur" path="res://scenes/portal.tscn" id="15_s327i"]
+[ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_8uyo4"]
+[ext_resource type="PackedScene" uid="uid://bumaujc3plt5v" path="res://scenes/jugador.tscn" id="2_to835"]
+[ext_resource type="Texture2D" uid="uid://cf1nmamxp83tt" path="res://resources/sprites/world_tileset.png" id="3_iqhs1"]
+[ext_resource type="Texture2D" uid="uid://dofkh78205w0j" path="res://resources/sprites/fruit.png" id="4_qyy8c"]
+[ext_resource type="Texture2D" uid="uid://cehmexgqwakv8" path="res://resources/sprites/platforms.png" id="5_anx58"]
+[ext_resource type="Texture2D" uid="uid://wm6f6kfupx0e" path="res://resources/sprites/Dimensional_Portal.png" id="6_m7sln"]
+[ext_resource type="Script" path="res://scripts/limiteMapa.gd" id="7_u7mbt"]
+[ext_resource type="PackedScene" uid="uid://digbqnh1wfi0p" path="res://scenes/moneda.tscn" id="8_s8v08"]
+[ext_resource type="PackedScene" uid="uid://l5vhy03fceor" path="res://scenes/plataforma.tscn" id="9_hlj4u"]
+[ext_resource type="FontFile" uid="uid://ye3pv8tt67cm" path="res://resources/fonts/PixelOperator8.ttf" id="10_whoam"]
+[ext_resource type="FontFile" uid="uid://b41eikwhvbel0" path="res://resources/fonts/PixelOperator8-Bold.ttf" id="11_3pi00"]
+[ext_resource type="PackedScene" uid="uid://fb7a3g4q7wd6" path="res://scenes/enemigo.tscn" id="12_ypl8s"]
+[ext_resource type="PackedScene" uid="uid://moh4swnumckv" path="res://scenes/pocion.tscn" id="13_sxus2"]
+[ext_resource type="PackedScene" uid="uid://brvhyunllpmur" path="res://scenes/portal.tscn" id="14_b7t10"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6hcw"]
-texture = ExtResource("1_xygsb")
+texture = ExtResource("3_iqhs1")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -413,7 +413,7 @@ texture = ExtResource("1_xygsb")
 2:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jltkv"]
-texture = ExtResource("3_5nhif")
+texture = ExtResource("4_qyy8c")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -452,7 +452,7 @@ texture = ExtResource("3_5nhif")
 2:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1mmi"]
-texture = ExtResource("4_0ve5c")
+texture = ExtResource("5_anx58")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -491,7 +491,7 @@ texture = ExtResource("4_0ve5c")
 2:3/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8on2e"]
-texture = ExtResource("5_5gtge")
+texture = ExtResource("6_m7sln")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -727,13 +727,13 @@ _data = {
 "new_animation": SubResource("Animation_8n8a7")
 }
 
-[node name="scene01" type="Node2D"]
+[node name="Tutorial1" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("8_boxib")
+script = ExtResource("1_8uyo4")
 
-[node name="jugador" parent="." instance=ExtResource("3_3m42p")]
+[node name="jugador" parent="." instance=ExtResource("2_to835")]
 position = Vector2(1512, 41)
 
 [node name="Camera2D" type="Camera2D" parent="jugador"]
@@ -755,7 +755,7 @@ layer_2/tile_data = PackedInt32Array(-327582, 196608, 1, -262046, 196608, 1, -19
 [node name="limiteMapa" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 2
-script = ExtResource("7_rsa1m")
+script = ExtResource("7_u7mbt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="limiteMapa"]
 position = Vector2(0, 130)
@@ -763,69 +763,69 @@ shape = SubResource("WorldBoundaryShape2D_0tnsb")
 
 [node name="Monedas" type="Node2D" parent="."]
 
-[node name="moneda" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(-600, 72)
 
-[node name="moneda2" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda2" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(-456, 72)
 
-[node name="moneda3" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda3" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(-440, 72)
 
-[node name="moneda4" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda4" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(-104, 40)
 
-[node name="moneda6" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda6" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(-8, -104)
 
-[node name="moneda7" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda7" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(168, -22)
 
-[node name="moneda8" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda8" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(184, -22)
 
-[node name="moneda9" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda9" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(200, -22)
 
-[node name="moneda5" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda5" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(-568, -40)
 
-[node name="moneda10" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda10" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1449, 54)
 
-[node name="moneda11" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda11" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1480, 54)
 
-[node name="moneda12" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda12" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1144, -184)
 
-[node name="moneda13" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda13" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1128, -184)
 
-[node name="moneda14" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda14" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1048, -184)
 
-[node name="moneda15" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda15" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1064, -184)
 
-[node name="moneda16" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda16" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1712, -488)
 
-[node name="moneda17" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda17" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(1760, -488)
 
-[node name="moneda18" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda18" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(2176, -457)
 
-[node name="moneda19" parent="Monedas" instance=ExtResource("4_ykoqp")]
+[node name="moneda19" parent="Monedas" instance=ExtResource("8_s8v08")]
 position = Vector2(2176, -472)
 
 [node name="Plataformas" type="Node2D" parent="."]
 
-[node name="plataforma" parent="Plataformas" instance=ExtResource("3_rm2st")]
+[node name="plataforma" parent="Plataformas" instance=ExtResource("9_hlj4u")]
 position = Vector2(-640, 11)
 
-[node name="plataforma2" parent="Plataformas" instance=ExtResource("3_rm2st")]
+[node name="plataforma2" parent="Plataformas" instance=ExtResource("9_hlj4u")]
 position = Vector2(368, 52)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plataformas/plataforma2"]
@@ -834,7 +834,7 @@ libraries = {
 }
 autoplay = "Movimiento"
 
-[node name="plataforma3" parent="Plataformas" instance=ExtResource("3_rm2st")]
+[node name="plataforma3" parent="Plataformas" instance=ExtResource("9_hlj4u")]
 position = Vector2(1539, 51)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plataformas/plataforma3"]
@@ -843,21 +843,19 @@ libraries = {
 }
 autoplay = "RESET"
 
-[node name="plataforma4" parent="Plataformas" instance=ExtResource("3_rm2st")]
+[node name="plataforma4" parent="Plataformas" instance=ExtResource("9_hlj4u")]
 position = Vector2(1409, -380)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plataformas/plataforma4"]
-root_node = NodePath("../../plataforma4")
 libraries = {
 "": SubResource("AnimationLibrary_sbtxk")
 }
 autoplay = "new_animation"
 
-[node name="plataforma5" parent="Plataformas" instance=ExtResource("3_rm2st")]
+[node name="plataforma5" parent="Plataformas" instance=ExtResource("9_hlj4u")]
 position = Vector2(1441, -380)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Plataformas/plataforma5"]
-root_node = NodePath("../../plataforma5")
 libraries = {
 "": SubResource("AnimationLibrary_5xx3k")
 }
@@ -871,7 +869,7 @@ offset_top = 24.0
 offset_right = 1083.0
 offset_bottom = 43.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "MOVIMIENTO
 A y D"
@@ -883,7 +881,7 @@ offset_top = 22.0
 offset_right = 1228.0
 offset_bottom = 31.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "SALTA AL ESPACIO"
 
@@ -893,7 +891,7 @@ offset_top = 20.0
 offset_right = 1566.0
 offset_bottom = 29.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "COLECCIONA MONEDAS"
 
@@ -903,7 +901,7 @@ offset_top = -228.0
 offset_right = 1486.0
 offset_bottom = -219.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "cuidado!!"
 uppercase = true
@@ -914,7 +912,7 @@ offset_top = -175.0
 offset_right = 1365.0
 offset_bottom = -166.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "que no te toque"
 uppercase = true
@@ -925,7 +923,7 @@ offset_top = -214.0
 offset_right = 1140.0
 offset_bottom = -205.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "recupera vida"
 uppercase = true
@@ -936,7 +934,7 @@ offset_top = -506.0
 offset_right = 1150.0
 offset_bottom = -493.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "Te veo en la meta"
 uppercase = true
@@ -947,7 +945,7 @@ offset_top = -524.0
 offset_right = 2254.0
 offset_bottom = -516.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "¡¡Lo conseguistes!!
 "
@@ -960,7 +958,7 @@ offset_top = -506.0
 offset_right = 2259.0
 offset_bottom = -487.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("8_dkvip")
+theme_override_fonts/font = ExtResource("11_3pi00")
 theme_override_font_sizes/font_size = 8
 text = "monedas 0/10
 calabazas 0/1"
@@ -973,7 +971,7 @@ offset_top = 21.0
 offset_right = -496.0
 offset_bottom = 36.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "espacio para saltar."
 
@@ -983,7 +981,7 @@ offset_top = 66.0
 offset_right = -190.0
 offset_bottom = 81.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "caer duele."
 
@@ -993,7 +991,7 @@ offset_top = -54.0
 offset_right = 188.0
 offset_bottom = -39.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "casi el final"
 
@@ -1003,7 +1001,7 @@ offset_top = -154.0
 offset_right = -2.0
 offset_bottom = -139.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("7_rg6yq")
+theme_override_fonts/font = ExtResource("10_whoam")
 theme_override_font_sizes/font_size = 8
 text = "¡Lo conseguistes!"
 horizontal_alignment = 1
@@ -1014,7 +1012,7 @@ offset_top = -137.0
 offset_right = 30.0
 offset_bottom = -122.0
 theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
-theme_override_fonts/font = ExtResource("8_dkvip")
+theme_override_fonts/font = ExtResource("11_3pi00")
 theme_override_font_sizes/font_size = 8
 text = "Has conseguido
 0 monedas"
@@ -1023,29 +1021,29 @@ uppercase = true
 
 [node name="Enemigos" type="Node2D" parent="."]
 
-[node name="enemigo" parent="Enemigos" instance=ExtResource("6_pqrey")]
+[node name="enemigo" parent="Enemigos" instance=ExtResource("12_ypl8s")]
 position = Vector2(-88, 80)
 
-[node name="enemigo2" parent="Enemigos" instance=ExtResource("6_pqrey")]
+[node name="enemigo2" parent="Enemigos" instance=ExtResource("12_ypl8s")]
 position = Vector2(1312, -128)
 
-[node name="enemigo3" parent="Enemigos" instance=ExtResource("6_pqrey")]
+[node name="enemigo3" parent="Enemigos" instance=ExtResource("12_ypl8s")]
 position = Vector2(1800, -416)
 
-[node name="enemigo4" parent="Enemigos" instance=ExtResource("6_pqrey")]
+[node name="enemigo4" parent="Enemigos" instance=ExtResource("12_ypl8s")]
 position = Vector2(2088, -416)
 
-[node name="enemigo5" parent="Enemigos" instance=ExtResource("6_pqrey")]
+[node name="enemigo5" parent="Enemigos" instance=ExtResource("12_ypl8s")]
 position = Vector2(1944, -416)
 
 [node name="consumibles" type="Node2D" parent="."]
 
-[node name="pocion" parent="consumibles" instance=ExtResource("12_hhclx")]
+[node name="pocion" parent="consumibles" instance=ExtResource("13_sxus2")]
 position = Vector2(1096, -184)
 
 [node name="objetosInteractuables" type="Node2D" parent="."]
 
-[node name="portal" parent="objetosInteractuables" instance=ExtResource("15_s327i")]
+[node name="portal" parent="objetosInteractuables" instance=ExtResource("14_b7t10")]
 position = Vector2(2231, -464)
 
 [connection signal="body_entered" from="limiteMapa" to="limiteMapa" method="_on_body_entered"]
