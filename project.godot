@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Musica="*res://scenes/musica.tscn"
 GameManager="*res://scripts/GameManager.gd"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
+
 [input]
 
 ui_right2={
