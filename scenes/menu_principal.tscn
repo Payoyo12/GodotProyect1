@@ -17,7 +17,7 @@ offset_top = 9.87654
 offset_right = 83.2171
 offset_bottom = 40.8765
 scale = Vector2(0.0607777, 0.144644)
-text = "Scene 1"
+text = "Tutorial basico"
 
 [node name="escena2" type="Button" parent="Panel"]
 layout_mode = 0
@@ -26,7 +26,7 @@ offset_top = 16.8519
 offset_right = 83.1134
 offset_bottom = 47.8519
 scale = Vector2(0.0607777, 0.144644)
-text = "Scene 2"
+text = "boss fight"
 
 [node name="exit" type="Button" parent="Panel"]
 layout_mode = 0

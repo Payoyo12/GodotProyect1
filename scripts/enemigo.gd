@@ -5,6 +5,7 @@ var DIRECCION = 1
 
 # variables para diseñador
 @export var VELOCIDAD = 60
+@export var vida = 1
 
 # Variables para nodos que se usarán en el script
 @onready var ray_cast_derecha = $RayCastDerecha
@@ -30,7 +31,7 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	
 	# efectos que pasa si colisiona con el jugador
-	if body.name == "jugador":
+	if body.name == "jugador": ##esto no se usa porque la colision la manejames en el inspector CollisionObject2D>Collision
 		# si tine mas de 1 de vida entra
 		if	body.vida >1: # resta 1 de vida y actualiza la informacion
 			body.decrementa_una_vida() 

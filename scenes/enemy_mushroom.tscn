@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://c171t7c7hu087" path="res://resources/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Run.png" id="6_mehne"]
 [ext_resource type="Texture2D" uid="uid://bhgvsqhuv5nuf" path="res://resources/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Stun.png" id="7_wkpft"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlrc7"]
+size = Vector2(12, 26)
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fkrra"]
 animation = &"Idel"
 
@@ -19,24 +22,13 @@ states/Idel/node = SubResource("AnimationNodeAnimation_fkrra")
 states/Idel/position = Vector2(351, 98.75)
 transitions = ["Start", "Idel", SubResource("AnimationNodeStateMachineTransition_62kfv")]
 
-[sub_resource type="Animation" id="Animation_87gid"]
-length = 1.4
-loop_mode = 1
-
-[sub_resource type="Animation" id="Animation_b0bjw"]
-resource_name = "new_animation"
-
-[sub_resource type="Animation" id="Animation_c3t40"]
-length = 1.6
-loop_mode = 1
-
 [sub_resource type="Animation" id="Animation_436mm"]
 length = 0.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -48,7 +40,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -63,7 +55,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -75,7 +67,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -91,7 +83,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -103,7 +95,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -113,13 +105,17 @@ tracks/1/keys = {
 "values": ["attackwithstun"]
 }
 
+[sub_resource type="Animation" id="Animation_87gid"]
+length = 1.4
+loop_mode = 1
+
 [sub_resource type="Animation" id="Animation_pa1hm"]
 length = 1.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -131,7 +127,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -147,7 +143,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -159,7 +155,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -169,13 +165,16 @@ tracks/1/keys = {
 "values": ["hit"]
 }
 
+[sub_resource type="Animation" id="Animation_b0bjw"]
+resource_name = "new_animation"
+
 [sub_resource type="Animation" id="Animation_e23wf"]
 length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -187,7 +186,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -203,7 +202,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/AnimatedSprite2D:frame")
+tracks/0/path = NodePath("../AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -215,7 +214,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/AnimatedSprite2D:animation")
+tracks/1/path = NodePath("../AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -224,6 +223,10 @@ tracks/1/keys = {
 "update": 1,
 "values": ["stun"]
 }
+
+[sub_resource type="Animation" id="Animation_c3t40"]
+length = 1.6
+loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_77qm5"]
 _data = {
@@ -886,28 +889,29 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlrc7"]
-
 [node name="EnemyMushroom" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_tlrc7")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")
 tree_root = SubResource("AnimationNodeStateMachine_yxr03")
-anim_player = NodePath("AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationTree")
 libraries = {
 "": SubResource("AnimationLibrary_77qm5")
 }
 autoplay = "new_animation"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimationTree/AnimationPlayer"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_rj1an")
 animation = &"Idel"
 autoplay = "Idel"
-frame = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -10)
-shape = SubResource("RectangleShape2D_tlrc7")
+frame = 5
