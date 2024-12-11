@@ -47,6 +47,3 @@ func destruction_animated():
 
 	# Una vez terminada la animación, libera (elimina) el nodo "moneda" de la escena
 	moneda.queue_free()
-
-
-

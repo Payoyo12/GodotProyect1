@@ -9,8 +9,8 @@ size = Vector2(16, 16)
 [node name="proyectil" type="RigidBody2D"]
 collision_layer = 32
 collision_mask = 5
-max_contacts_reported = 1
 contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_os5v3")
 force = 150
 

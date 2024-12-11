@@ -8,7 +8,3 @@ func _on_body_entered(body):
 	if body.name == "jugador":
 		body.death()
 	
-
-
-
-

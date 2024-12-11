@@ -1,5 +1,6 @@
-[gd_scene load_steps=111 format=3 uid="uid://bnpqsiia7jqt7"]
+[gd_scene load_steps=120 format=3 uid="uid://bnpqsiia7jqt7"]
 
+[ext_resource type="Script" path="res://scripts/state_mashine/enemy_mushroom.gd" id="1_1kkq8"]
 [ext_resource type="Texture2D" uid="uid://bbuhici23gek6" path="res://resources/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="1_yyefr"]
 [ext_resource type="Texture2D" uid="uid://dvlgg3yxwx85b" path="res://resources/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Attack.png" id="2_tvefh"]
 [ext_resource type="Texture2D" uid="uid://dvwuy1kud710c" path="res://resources/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-AttackWithStun.png" id="3_7tfoe"]
@@ -14,13 +15,49 @@ size = Vector2(12, 26)
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fkrra"]
 animation = &"Idel"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_62kfv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mucs4"]
+animation = &"attack"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cmi50"]
+animation = &"attackwithstun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5nqek"]
+animation = &"die"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l5jy0"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pqvmd"]
+animation = &"stun"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vnp8e"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wkw5l"]
 advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sripm"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lef7a"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_yxr03"]
 states/Idel/node = SubResource("AnimationNodeAnimation_fkrra")
-states/Idel/position = Vector2(351, 98.75)
-transitions = ["Start", "Idel", SubResource("AnimationNodeStateMachineTransition_62kfv")]
+states/Idel/position = Vector2(206.75, 279.75)
+states/Start/position = Vector2(200, 99.75)
+states/attack/node = SubResource("AnimationNodeAnimation_mucs4")
+states/attack/position = Vector2(839.5, 374.5)
+states/attackwithstun/node = SubResource("AnimationNodeAnimation_cmi50")
+states/attackwithstun/position = Vector2(926, 290.5)
+states/die/node = SubResource("AnimationNodeAnimation_5nqek")
+states/die/position = Vector2(693.5, 280)
+states/run/node = SubResource("AnimationNodeAnimation_l5jy0")
+states/run/position = Vector2(356.375, 291.75)
+states/stun/node = SubResource("AnimationNodeAnimation_pqvmd")
+states/stun/position = Vector2(947.25, 190.875)
+states/walk/node = SubResource("AnimationNodeAnimation_vnp8e")
+states/walk/position = Vector2(505.75, 271.5)
+transitions = ["Start", "Idel", SubResource("AnimationNodeStateMachineTransition_wkw5l"), "Idel", "run", SubResource("AnimationNodeStateMachineTransition_sripm"), "run", "Idel", SubResource("AnimationNodeStateMachineTransition_lef7a")]
+graph_offset = Vector2(-38, 71.2115)
 
 [sub_resource type="Animation" id="Animation_436mm"]
 length = 0.7
@@ -892,6 +929,13 @@ animations = [{
 [node name="EnemyMushroom" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_1kkq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -17)
+texture = ExtResource("1_yyefr")
+region_enabled = true
+region_rect = Rect2(25, 31, 30, 33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
@@ -914,4 +958,4 @@ position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_rj1an")
 animation = &"Idel"
 autoplay = "Idel"
-frame = 5
+frame = 2
